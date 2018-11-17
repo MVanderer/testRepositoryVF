@@ -1,0 +1,137 @@
+* {
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    margin-top:20px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid red;
+    text-align: center;
+    background-color: darkslategrey;
+}
+
+#gate {
+    width: 512px;
+}
+
+#wall {
+    width: 1024px;
+    text-align: left;
+}
+
+h2, h3 {
+    margin-bottom: 10px;
+    color: white;
+}
+
+h5 {
+    color:white;
+    margin-bottom: 10px;
+    text-shadow: 0px 0px 10px red;
+}
+
+input {
+    display: block;
+    width: 100%;
+    padding: 7px;
+    margin-bottom: 10px;
+    font-size: 120%;
+    background-color: white;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top:10px;
+    margin-bottom: 20px;
+    background-color: firebrick;
+    border:none;
+    color: white;
+    font-size: 150%;
+    border-radius: 5px;
+    outline:none;
+    box-shadow: 5px 5px black;
+}
+
+textarea {
+    width: 100%;
+    resize: none;
+    overflow: scroll;
+    background-color: white;
+    padding: 10px;
+    font-size: 100%;
+}
+
+h4, p {
+    text-align: left;
+}
+
+h4 {
+    color: wheat;
+    margin-bottom: 5px;
+}
+
+p {
+    color:white;
+    margin-bottom: 10px;
+}
+
+#header {
+    text-align: left;
+    justify-content: space-between;
+    display: flex;
+}
+
+#header button{
+    width:120px;
+    display: inline-block;
+    font-size: 100%;
+    padding: 5px;
+}
+
+#header h2 {
+    display: inline-block;
+    vertical-align: bottom;
+    text-align: left;
+    font-size: 200%;
+}
+
+a {
+    text-decoration: none;
+    text-align: right;
+    color: white;
+}
+
+.comment button {
+    width:120px;
+    display: inline-block;
+    font-size: 100%;
+    padding: 5px;
+    background-color: sienna;
+}
+
+.comment_form {
+    text-align: right;
+    width: 90%;
+    margin-left: auto;
+}
+
+.comment {
+    width: 90%;
+    margin-left: auto;
+    margin-bottom: 20px;
+}
+
+.message a{
+    text-align: right;
+    background-color: red;
+    padding: 5px;
+    font-weight: bolder;
+    border-radius: 5px;
+}

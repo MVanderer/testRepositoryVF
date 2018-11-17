@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <title>The Wall</title>
+</head>
+<body>
+    <div class="wrapper" id='wall'>
+        <div id="header">
+            <h2>Welcome, {{username}}</h2>
+            <a href="/log_off">
+                <button>Log Off</button>
+            </a>
+        </div>
+        <form action="/post_message" method="POST">
+            {% csrf_token %}
+            <h3>Post a message</h3>
+            <textarea rows="5" name="message"></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        {% for message in messages %}
+            <div class="message">
+                <h4>{{message.author.first_name}} - {{message.created_at}}</h4>
+                <p>{{ message.message }}</p>
+
+                {% if request.session.current_user == message.author.email %}
+                    <a href="/message_delete/{{message.id}}">Delete</a>
+                {% endif %}
+
+                {% for comment in message.comments.all %}
+                    <div class="comment">
+                        <h4>{{comment.author.first_name}} - {{comment.created_at}}</h4>
+                        <p>{{comment.comment}}</p>
+                        {% if request.session.current_user == comment.author.email %}
+                            <a href="/comment_delete/{{comment.id}}">Delete</a>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+                <form action="/post_comment/{{message.id}}" method="POST" class="comment_form">
+                    {% csrf_token %}
+                    <textarea rows="4" name="comment"></textarea>
+                    <button type="submit">Comment</button>
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
